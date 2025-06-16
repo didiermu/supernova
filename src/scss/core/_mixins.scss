@@ -1,0 +1,96 @@
+// CONTAINERS
+
+// _containers.scss
+
+$container-sizes: (
+    mobile: (
+        max-width: 360px,
+        padding: 24px,
+    ),
+    tablet: (
+        max-width: 768px,
+        padding: 64px,
+    ),
+    desktop: (
+        max-width: 1280px,
+        padding: 96px,
+    ),
+    fullwidth: (
+        max-width: 1440px,
+        padding: auto,
+    ),
+);
+
+@mixin container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    // Aplica estilos según cada breakpoint
+    @each $label, $config in $container-sizes {
+        $max-width: map-get($config, max-width);
+        $padding: map-get($config, padding);
+
+        // Mobile: aplica sin media query
+        @if $label == mobile {
+            max-width: $max-width;
+            padding-left: $padding;
+            padding-right: $padding;
+        }
+
+        // Otros: aplica con media query
+        @else {
+            @media (min-width: $max-width) {
+                max-width: $max-width;
+
+                @if $padding != auto {
+                    padding-left: $padding;
+                    padding-right: $padding;
+                } @else {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}
+
+// @mixin text-lg-44 {
+//     font-size: 2.75rem;
+//     line-height: 3rem;
+// }
+//
+// @mixin text-lg-40 {
+//     font-size: 2.5rem;
+//     line-height: 2.75rem;
+// }
+//
+// @mixin text-lg-36 {
+//     font-size: 2.25rem;
+//     line-height: 2.5rem;
+// }
+//
+// @mixin text-lg-32 {
+//     font-size: 2rem;
+//     line-height: 2.5rem;
+// }
+//
+// @mixin text-md-22 {
+//     font-size: 1.375rem;
+//     line-height: 1.625rem;
+// }
+//
+// @mixin text-sm-18 {
+//     font-size: 1.125rem;
+//     line-height: 1.75rem;
+// }
+//
+// @mixin text-sm-16 {
+//     font-size: 1rem;
+//     line-height: 1.5rem;
+// }
+//
+// @mixin text-sm-14 {
+//     font-size: 0.875rem;
+//     line-height: 1rem;
+// }

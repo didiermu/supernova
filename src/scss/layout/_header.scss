@@ -1,0 +1,43 @@
+header {
+    padding: var(--spacing-03) 0;
+    position: fixed;
+    top: 0;
+    height: 0;
+    width: 100%;
+    z-index: 9;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.5s ease-in-out all;
+    background: #010101;
+    background: linear-gradient(180deg, #010101, #01010100);
+
+    &.collapse {
+        opacity: 1;
+        height: auto;
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #logo-header {
+        display: block;
+        width: min(100%, 210px);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    #icon-nav {
+        width: 40px;
+        height: 40px;
+        border: 0;
+        box-shadow: none;
+        background: url("../img/icon-ham.svg") no-repeat center / contain;
+    }
+}

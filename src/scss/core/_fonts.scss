@@ -1,0 +1,85 @@
+@font-face {
+    font-family: "Pixel";
+    src: url(../fonts/Pixel-Sport.eot);
+    src: local("@"), url(../fonts/Pixel-Sport.ttf) format("truetype"),
+        url(../fonts/Pixel-Sport.otf) format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins-Regular";
+    src: url(../fonts/Poppins-Regular.eot);
+    src: local("@"), url(../fonts/Poppins-Regular.ttf) format("truetype"),
+        url(../fonts/Poppins-Regular.otf) format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins-Bold";
+    src: url(../fonts/Poppins-Bold.eot);
+    src: local("@"), url(../fonts/Poppins-Bold.ttf) format("truetype"),
+        url(../fonts/Poppins-Bold.otf) format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+$font-style: (
+    "xl-64": (
+        "font-size": 4rem,
+        "line-height": 1,
+    ),
+    "lg-48": (
+        "font-size": 3rem,
+        "line-height": 1,
+    ),
+    "lg-40": (
+        "font-size": 2.5rem,
+        "line-height": 1,
+    ),
+    "lg-32": (
+        "font-size": 2rem,
+        "line-height": 1.2,
+    ),
+    "lg-28": (
+        "font-size": 1.75rem,
+        "line-height": 1.2,
+    ),
+    "md-24": (
+        "font-size": 1.5rem,
+        "line-height": 1.2,
+    ),
+    "md-20": (
+        "font-size": 1.25rem,
+        "line-height": 1.2,
+    ),
+    "md-18": (
+        "font-size": 1.125rem,
+        "line-height": 1.2,
+    ),
+    "md-16": (
+        "font-size": 1rem,
+        "line-height": 1.2,
+    ),
+);
+
+@mixin font($style) {
+    $style: map-get($font-style, $style);
+
+    font-size: map-get($style, "font-size");
+    line-height: map-get($style, "line-height");
+}
+
+// @mixin apply-type($style) {
+//   // 1. Obtenemos los estilos del mapa según el nombre (por ejemplo, "h1")
+//   $styles: map-get($typography, $style);
+//
+//     font-size: map-get($styles, font-size);     // extrae el font-size
+//     line-height: map-get($styles, line-height); // extrae el line-height
+//
+//
+// }

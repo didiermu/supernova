@@ -1,0 +1,30 @@
+footer {
+    padding: var(--spacing-03) 0;
+    .row {
+        display: grid;
+        row-gap: var(--spacing-03);
+    }
+    h6,
+    a {
+        @include font(md-18);
+        color: var(--color-white);
+        letter-spacing: 0.1rem;
+        text-decoration: none;
+    }
+}
+
+@media (min-width: 1280px) {
+    footer {
+        padding: var(--spacing-10) 0;
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h6,
+        a {
+            @include font(md-24);
+        }
+    }
+}
